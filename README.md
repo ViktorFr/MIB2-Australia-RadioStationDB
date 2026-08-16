@@ -112,25 +112,29 @@ Different units may use different:
 
 # 💾 Installation
 
-## Method used during development/testing
+## Requirements
 
-The database was installed using the **M.I.B. (More Incredible Bash)** toolbox.
+This release is intended for compatible **Harman MIB2 High / MIB2.5 High** units running M.I.B. (More Incredible Bash).
 
-If your unit already has M.I.B. installed, the RadioStationDB backup/restore functionality can be used to work with the database.
+Before continuing you should have:
+
+- A compatible Harman **MHI2 / MHI2Q** unit
+- M.I.B. already installed and accessible through the Green Engineering Menu (GEM)
+- A known-good FAT32 SD card prepared for M.I.B.
+- The M.I.B. SD card inserted into **SD1**
+- A backup of your existing RadioStationDB
+
+> ⚠️ This release has been tested on the unit documented above. Do not assume compatibility with Delphi, Technisat/Preh, MIB3 or unrelated infotainment platforms.
+
+---
 
 ### 1. BACK UP YOUR ORIGINAL DATABASE FIRST
 
-Before installing anything:
+Before installing anything, create a backup of the RadioStationDB currently installed on your unit using the M.I.B. backup functionality.
 
-Open M.I.B. and navigate to:
+**Keep this backup somewhere safe, preferably on your computer as well as another storage device.**
 
-`Backup / Restore → Advanced Backup → RadioStationDB`
-
-Create a backup of the RadioStationDB currently installed on your unit.
-
-**Keep this backup somewhere safe.**
-
-Do not continue until you have a working backup.
+Do not continue unless you have a known-good backup and understand how to restore it.
 
 ---
 
@@ -138,37 +142,57 @@ Do not continue until you have a working backup.
 
 Download the latest release from the **Releases** section of this GitHub repository.
 
-Extract the archive if required.
+Extract:
 
-Read the included release notes before copying files to your SD card.
+`VW_MIB2_Harman_Australia_RSDB_v1.0.0.zip`
 
----
+The release contains the following database structure:
 
-### 3. Prepare the SD card
+`mod/RSDB/VW_STL_DB.sqlite`
 
-Use an SD card compatible with your MIB system and M.I.B. installation.
-
-Follow the folder structure supplied with the release.
-
-Do not rename database files or change the supplied directory structure unless you know exactly what you are doing.
+**Do not rename `VW_STL_DB.sqlite`.**
 
 ---
 
-### 4. Install / Restore
+### 3. Copy the database to your M.I.B. SD card
 
-Use the appropriate M.I.B. RadioStationDB restore/update function to install the database.
+On your computer, open your existing **M.I.B. SD card**.
 
-Allow the operation to finish completely.
+Copy the supplied:
 
-**Do not remove power or the SD card while data is being written.**
+`mod`
+
+folder to the **ROOT of the M.I.B. SD card**.
+
+The final database location on the SD card must be:
+
+`/mod/RSDB/VW_STL_DB.sqlite`
+
+Keep the supplied directory structure intact.
 
 ---
 
-### 5. Restart the MIB
+### 4. Install the RadioStationDB
 
-After installation, reboot the infotainment system.
+Insert the M.I.B. SD card into **SD1**.
 
-A common MIB restart method is holding the power button for approximately 10 seconds until the unit restarts.
+Enter the **Green Engineering Menu (GEM)**.
+
+Navigate to:
+
+`m.i.b. → multimedia_system → radio → radiostation_db → Copy RSDB to unit`
+
+Select **Copy RSDB to unit** and allow the operation to finish completely.
+
+> ⚠️ **Do not remove the SD card or interrupt power while the database is being written.**
+
+---
+
+### 5. Restart the infotainment system
+
+After the database has been successfully copied, restart/reboot the infotainment system.
+
+Allow the system to start normally.
 
 ---
 
@@ -178,13 +202,42 @@ Open:
 
 `Radio → FM`
 
-Allow the unit to receive local stations and RDS information.
+Allow the tuner and station list to populate.
 
-Some station information may take time to populate.
+Refresh or rescan the FM station list if required.
 
-If you previously stored presets, you may need to tune or save them again before the new match becomes visible.
+Station logos are matched automatically using information including the station's RDS/PI identification, frequency and regional configuration.
 
 ---
+
+## 🇦🇺 Tested Radio Configuration
+
+The Melbourne test installation successfully operated with:
+
+- **FM tuner region:** EU/RDW
+- **AM tuner region:** Australia
+- **RadioStationDB region:** EU
+- **Station-logo region:** Australia / country 61
+- **Automatic/Autostore station logos:** Enabled
+
+> **Do not blindly change an otherwise working radio configuration to match these settings.** Different firmware and vehicle configurations may expose these options differently.
+
+---
+
+## 🔄 Recovery
+
+If the database does not work correctly on your unit, restore the **original RadioStationDB backup** you created before installation.
+
+Do not repeatedly install unknown or incompatible RadioStationDB files in an attempt to fix a problem.
+
+This package only supplies a RadioStationDB.
+
+It does **not**:
+
+- Remove Component Protection
+- Activate FEC/SWaP features
+- Patch firmware
+- Unlock protected functions
 
 # 🔧 Troubleshooting
 
