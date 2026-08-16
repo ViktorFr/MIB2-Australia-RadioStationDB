@@ -1,6 +1,6 @@
-# AU MIB2 Australia RadioStationDB
+# 🇦🇺 AU MIB2 Australia RadioStationDB
 
-Updated Australian RadioStationDB (RSDB) for compatible Volkswagen MIB2 / MIB2.5 infotainment systems.
+Updated Australian RadioStationDB (RSDB) for compatible **Volkswagen/Harman MIB2 High / MIB2.5 High** infotainment systems.
 
 This community project improves Australian FM radio station identification and station-logo matching on compatible MIB units.
 
@@ -90,7 +90,8 @@ This release is intended principally for compatible **Harman MIB High** systems:
 
 The database was successfully tested on:
 
-**Volkswagen/Harman MIB2.5 High / Discover Pro**  
+**Volkswagen/Harman MIB2.5 High / Discover Pro**
+
 **Part number:** 5NA 035 045 F  
 **Hardware:** H55  
 **Software:** 1367
@@ -106,7 +107,14 @@ This package should **not be assumed compatible** with:
 - MIB3
 - Unrelated infotainment platforms
 
-Different units may use different hardware, firmware, software trains, database formats and regional configurations.
+Different units may use different:
+
+- Hardware
+- Firmware
+- Software trains
+- Database formats
+- Radio configurations
+- Regions
 
 **Always make a backup of your original RadioStationDB before changing anything.**
 
@@ -116,7 +124,7 @@ Different units may use different hardware, firmware, software trains, database 
 
 ## Requirements
 
-This release is intended for compatible **Harman MIB2 High / MIB2.5 High** units running M.I.B. (More Incredible Bash).
+This release is intended for compatible **Harman MIB2 High / MIB2.5 High** units running **M.I.B. (More Incredible Bash)**.
 
 Before continuing you should have:
 
@@ -126,11 +134,11 @@ Before continuing you should have:
 - The M.I.B. SD card inserted into **SD1**
 - A backup of your existing RadioStationDB
 
-> ⚠️ This release has been tested on the unit documented above. Do not assume compatibility with Delphi, Technisat/Preh, MIB3 or unrelated infotainment platforms.
+> ⚠️ **This release has been tested on the unit documented above. Do not assume compatibility with Delphi, Technisat/Preh, MIB3 or unrelated infotainment platforms.**
 
 ---
 
-### 1. BACK UP YOUR ORIGINAL DATABASE FIRST
+## 1. BACK UP YOUR ORIGINAL DATABASE FIRST
 
 Before installing anything, create a backup of the RadioStationDB currently installed on your unit using the M.I.B. backup functionality.
 
@@ -140,41 +148,63 @@ Do not continue unless you have a known-good backup and understand how to restor
 
 ---
 
-### 2. Download the release
+## 2. Download the release
 
 Download the latest release from the **Releases** section of this GitHub repository.
 
-Extract:
+For version 1.0.0, extract:
 
 `VW_MIB2_Harman_Australia_RSDB_v1.0.0.zip`
 
 The release contains the following database structure:
 
-`mod/RSDB/VW_STL_DB.sqlite`
+```text
+mod/
+└── RSDB/
+    └── VW_STL_DB.sqlite
+```
 
 **Do not rename `VW_STL_DB.sqlite`.**
 
 ---
 
-### 3. Copy the database to your M.I.B. SD card
+## 3. Copy the database to your M.I.B. SD card
 
 On your computer, open your existing **M.I.B. SD card**.
 
 Copy the supplied:
 
-`mod`
+```text
+mod
+```
 
 folder to the **ROOT of the M.I.B. SD card**.
 
 The final database location on the SD card must be:
 
-`/mod/RSDB/VW_STL_DB.sqlite`
+```text
+/mod/RSDB/VW_STL_DB.sqlite
+```
 
 Keep the supplied directory structure intact.
 
+Your SD card should therefore contain something similar to:
+
+```text
+SD CARD ROOT
+│
+├── M.I.B. files/folders
+│
+├── ...
+│
+└── mod
+    └── RSDB
+        └── VW_STL_DB.sqlite
+```
+
 ---
 
-### 4. Install the RadioStationDB
+## 4. Install the RadioStationDB
 
 Insert the M.I.B. SD card into **SD1**.
 
@@ -182,31 +212,51 @@ Enter the **Green Engineering Menu (GEM)**.
 
 Navigate to:
 
-`m.i.b. → multimedia_system → radio → radiostation_db → Copy RSDB to unit`
+```text
+m.i.b.
+→ multimedia_system
+→ radio
+→ radiostation_db
+→ Copy RSDB to unit
+```
 
-Select **Copy RSDB to unit** and allow the operation to finish completely.
+Select:
+
+```text
+Copy RSDB to unit
+```
+
+and allow the operation to finish completely.
 
 > ⚠️ **Do not remove the SD card or interrupt power while the database is being written.**
 
 ---
 
-### 5. Restart the infotainment system
+## 5. Restart the infotainment system
 
 After the database has been successfully copied, restart/reboot the infotainment system.
+
+A common MIB restart method is to hold the infotainment power button for approximately **10 seconds** until the unit restarts.
 
 Allow the system to start normally.
 
 ---
 
-### 6. Test the radio
+## 6. Test the radio
 
 Open:
 
-`Radio → FM`
+```text
+Radio → FM
+```
 
 Allow the tuner and station list to populate.
 
 Refresh or rescan the FM station list if required.
+
+Some station information may take time to populate.
+
+If you previously stored presets, you may need to tune or save them again before the new match becomes visible.
 
 Station logos are matched automatically using information including the station's RDS/PI identification, frequency and regional configuration.
 
@@ -241,6 +291,8 @@ It does **not**:
 - Patch firmware
 - Unlock protected functions
 
+---
+
 # 🔧 Troubleshooting
 
 ## Station works but has no logo
@@ -272,6 +324,7 @@ If the incorrect match remains, please open a GitHub Issue and include:
 - Frequency
 - City / region
 - MIB model
+- Part number
 - Firmware train/version
 - Screenshot if possible
 
@@ -284,6 +337,8 @@ This information can help improve future versions.
 Restore your original RadioStationDB backup.
 
 Please do not experiment with incompatible databases if you do not have a known-good backup.
+
+If you report the problem through GitHub Issues, please include your MIB part number and firmware information so compatibility can be investigated.
 
 ---
 
@@ -310,12 +365,16 @@ If you test the database, please report:
 **Vehicle:**  
 **MIB unit:**  
 **Part number:**  
+**Hardware:**  
 **Firmware:**  
 **Location:**  
 **Stations working:**  
 **Stations missing:**  
+**Incorrect matches:**  
 
-This will help determine compatibility across different MIB hardware and Australian radio markets.
+Screenshots of the radio station list and MIB system information are also extremely useful.
+
+This information will help determine compatibility across different MIB hardware, firmware versions and Australian radio markets.
 
 ---
 
@@ -330,7 +389,9 @@ Before making any changes:
 1. Back up your original RadioStationDB.
 2. Make sure you know how to restore it.
 3. Do not interrupt power during write operations.
-4. Do not install files intended for incompatible hardware.
+4. Do not remove the SD card while files are being written.
+5. Do not install files intended for incompatible hardware.
+6. Verify your MIB hardware and firmware before installation.
 
 The project author and contributors are not responsible for damage, loss of functionality, corrupted data or other problems resulting from use of these files.
 
@@ -338,9 +399,11 @@ The project author and contributors are not responsible for damage, loss of func
 
 # 🙏 Credits
 
-Thanks to the Volkswagen MIB community and the developers and contributors behind the M.I.B. project and related MIB research/tools.
+Thanks to the Volkswagen MIB community and the developers and contributors behind the [M.I.B. (More Incredible Bash)](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash) project and related MIB research/tools.
 
 This Australian RadioStationDB project was created through community experimentation, database analysis and real-world testing on Australian FM radio stations.
+
+Special thanks to everyone who contributes compatibility reports, station information and testing from different Australian regions.
 
 ---
 
@@ -363,3 +426,14 @@ No ownership of third-party trademarks, artwork or proprietary Volkswagen/Harman
 If this database works on your MIB system, consider giving the repository a **Star ⭐**.
 
 More testing from different MIB units and different parts of Australia will help improve future releases.
+
+If you find a station that is:
+
+- Missing its logo
+- Showing the wrong logo
+- Incorrectly identified
+- Missing from the database
+
+please open a **GitHub Issue** and include your location, station frequency and MIB information.
+
+Community reports will help improve future versions of the Australian RadioStationDB.
