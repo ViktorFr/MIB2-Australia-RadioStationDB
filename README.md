@@ -1,10 +1,14 @@
-# 🇦🇺 MIB2 Australia RadioStationDB
+# AU MIB2 Australia RadioStationDB
 
-Updated Australian **RadioStationDB (RSDB)** for compatible Volkswagen MIB2 / MIB2.5 infotainment systems.
+Updated Australian RadioStationDB (RSDB) for compatible Volkswagen MIB2 / MIB2.5 infotainment systems.
 
 This community project improves Australian FM radio station identification and station-logo matching on compatible MIB units.
 
-The database was created and tested using a Volkswagen/Harman MIB2.5 High system in Australia.
+The database was created and tested in Australia on a **Volkswagen/Harman MIB2.5 High (Discover Pro)** unit.
+
+**Test unit:** 5NA 035 045 F  
+**Hardware:** H55  
+**Software:** 1367
 
 ---
 
