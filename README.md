@@ -1,4 +1,4 @@
-# 🇦🇺 AU MIB2 Australia RadioStationDB
+#  AU MIB2 Australia RadioStationDB
 
 Updated Australian RadioStationDB (RSDB) for compatible **Volkswagen/Harman MIB2 High / MIB2.5 High** infotainment systems.
 
