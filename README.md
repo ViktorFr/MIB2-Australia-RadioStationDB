@@ -43,27 +43,37 @@ Additional stations may also be recognised depending on your location and the RD
 
 ### Before
 
-Some Australian stations previously appeared without matching artwork or station information.
+Before installing the updated RadioStationDB, a number of Australian FM stations were missing station artwork or were not correctly matched.
 
-<!-- Add before screenshot here later -->
+![Before RadioStationDB update](Screenshots/before.png)
 
 ### After
 
-After installing the updated RadioStationDB, compatible stations are automatically matched by the MIB system.
+After installing the updated RadioStationDB, the MIB automatically matched many Australian FM stations with their correct station artwork.
 
-<!-- Add after screenshots here later -->
+![After RadioStationDB update - Page 1](Screenshots/after1.png)
 
-The station logos shown by the MIB depend on the database match, available artwork and the RDS/PI information received from the station.
+![After RadioStationDB update - Page 2](Screenshots/after2.png)
+
+The station logos are automatically selected by the MIB based on the station identification data and the RDS/PI information received from the station.
 
 ---
 
-## ✅ Tested Configuration
+## 🧪 Tested System
 
-This release has been successfully tested on:
+This release was created and successfully tested on a **Volkswagen Harman MIB2.5 High / Discover Pro** unit in Australia.
 
-**Volkswagen Harman MIB2.5 High / Discover Pro**
+The following screenshots show the hardware, software and version information of the exact unit used for testing.
 
-The database successfully loads and matches Australian FM stations on the tested unit.
+### Tested Unit Information
+
+![MIB2.5 tested unit information - 1](Screenshots/Radio%20Info1.png)
+
+![MIB2.5 tested unit information - 2](Screenshots/Radio%20Info2.png)
+
+![MIB2.5 tested unit information - 3](Screenshots/Radio%20Info3.png)
+
+> **Note:** Successful operation on this unit does not guarantee compatibility with every MIB2 or MIB2.5 variant. Always create a backup of your original RadioStationDB before making changes.
 
 ---
 
