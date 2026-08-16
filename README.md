@@ -83,28 +83,30 @@ The following screenshots show the hardware, software and version information of
 
 ## ⚠️ Compatibility
 
-This database may work with other compatible Volkswagen Group MIB2 / MIB2.5 systems that use the same RadioStationDB architecture.
+This release is intended principally for compatible **Harman MIB High** systems:
 
-However, it has **NOT been tested on every MIB variant**.
+- **MHI2** — MIB2 High
+- **MHI2Q** — later MIB2 High / commonly referred to as MIB2.5 High
 
-Potential systems include certain:
+The database was successfully tested on:
 
-- Volkswagen MIB2
-- Volkswagen MIB2.5
-- Harman MIB High units
-- Discover Pro systems
-- Other compatible MQB infotainment systems
+**Volkswagen/Harman MIB2.5 High / Discover Pro**  
+**Part number:** 5NA 035 045 F  
+**Hardware:** H55  
+**Software:** 1367
+
+It has **NOT been tested on every firmware, vehicle, region or head-unit variant**.
 
 ### Do NOT assume compatibility based only on the vehicle model.
 
-Different units may use different:
+This package should **not be assumed compatible** with:
 
-- Hardware
-- Firmware
-- Train versions
-- Database formats
-- Radio configurations
-- Regions
+- Delphi units
+- Technisat/Preh units
+- MIB3
+- Unrelated infotainment platforms
+
+Different units may use different hardware, firmware, software trains, database formats and regional configurations.
 
 **Always make a backup of your original RadioStationDB before changing anything.**
 
